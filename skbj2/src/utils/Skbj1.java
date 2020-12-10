@@ -1,24 +1,10 @@
-package test;
+package utils;
 
 import java.util.Calendar;
-import java.util.Scanner;
-
-import util.LunarUtil;
 
 public class Skbj1 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.print("请输入公历的年份: ");
-		Scanner scanner = new Scanner(System.in);
-		int year = scanner.nextInt();
-
-		System.out.print("请输入公历的月份: ");
-		int month = scanner.nextInt();
-
-		System.out.print("请输入公历的日子: ");
-		int day = scanner.nextInt();
-
+	public String defaultMain( int year, int month, int day) {
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(year, month - 1, day);
 		LunarUtil lunarUtil = new LunarUtil(calendar);
@@ -1037,7 +1023,7 @@ public class Skbj1 {
 		}
 		if( lunarUtil.cyclicalYear().equals( ganzhi)) {
 			flag = 0;
-			cause += "值年太岁日";
+			cause += "值年太岁日，";
 		}
 		
 		// 丙丁日
@@ -1291,9 +1277,6 @@ public class Skbj1 {
 			cause += "地藏十斋日，";
 		}
 		
-		System.out.println( flag + ":" + cause);
-		
-		scanner.close();
+		return flag + ": " + cause;
 	}
-
 }
