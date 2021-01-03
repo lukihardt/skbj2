@@ -28,9 +28,11 @@ public class TestMain {
 		int endDay = scanner.nextInt();
 		
 		Calendar startCal = Calendar.getInstance();
+		//noinspection MagicConstant
 		startCal.set( startYear, startMonth - 1, startDay);
 		
 		Calendar endCal = Calendar.getInstance();
+		//noinspection MagicConstant
 		endCal.set( endYear, endMonth - 1, endDay);
 		
 		// TODO Auto-generated method stub
